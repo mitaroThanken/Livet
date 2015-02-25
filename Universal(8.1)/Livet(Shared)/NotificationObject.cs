@@ -9,13 +9,11 @@ namespace Livet
     /// <summary>
     /// 変更通知オブジェクトの基底クラスです。
     /// </summary>
-    [Serializable]
     public class NotificationObject : INotifyPropertyChanged
     {
         /// <summary>
         /// プロパティ変更通知イベントです。
         /// </summary>
-        [field: NonSerialized]   
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
@@ -43,7 +41,7 @@ namespace Livet
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1030:UseEventsWhereAppropriate")]
 #if NET4
         protected virtual void RaisePropertyChanged(string propertyName)
-#elif NET45
+#elif NET45 || NETFX_CORE
         protected virtual void RaisePropertyChanged([CallerMemberName] string propertyName="")
 #endif
         {
