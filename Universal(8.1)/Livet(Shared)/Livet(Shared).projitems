@@ -24,6 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)LivetCompositeDisposable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\GenericInteractionMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\GenericResponsiveInteractionMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messaging\InformationMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\InteractionMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\InteractionMessenger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\IO\FileSelectionMessage.cs" />
