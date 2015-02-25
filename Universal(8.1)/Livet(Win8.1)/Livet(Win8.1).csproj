@@ -33,6 +33,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Livet.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
     <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
@@ -41,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Livet.snk" />
   </ItemGroup>
   <Import Project="..\..\Livet(Shared)\Livet(Shared).projitems" Label="Shared" Condition="Exists('..\..\Livet(Shared)\Livet(Shared).projitems')" />
   <Import Project="..\Livet(Shared)\Livet(Shared).projitems" Label="Shared" Condition="Exists('..\Livet(Shared)\Livet(Shared).projitems')" />

@@ -33,6 +33,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Livet.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
     <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
@@ -47,6 +53,9 @@
       <Project>{bd115685-b1c7-4332-b133-6693d449f87c}</Project>
       <Name>Livet%28Win8.1%29</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Livet.snk" />
   </ItemGroup>
   <Import Project="..\Livet.Design(Shared)\Livet.Design(Shared).projitems" Label="Shared" Condition="Exists('..\Livet.Design(Shared)\Livet.Design(Shared).projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
