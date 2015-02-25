@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReferenceAssemblies", "ReferenceAssemblies", "{2A9295C6-FB3D-41DF-967B-60BCE5934B51}"
 	ProjectSection(SolutionItems) = preProject
 		ReferenceAssemblies\Microsoft.WindowsAPICodePack.dll = ReferenceAssemblies\Microsoft.WindowsAPICodePack.dll
@@ -82,9 +84,37 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installer", "Installer", "{
 		Installer\ReadMe.txt = Installer\ReadMe.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Universal(8.1)", "Universal(8.1)", "{F1772DA5-6A26-4052-9084-B1AC25C30FA1}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Livet(Shared)", "Universal(8.1)\Livet(Shared)\Livet(Shared).shproj", "{9D0485DF-E463-4EDA-A643-49F8EB84AAB9}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Livet.Design(Shared)", "Universal(8.1)\Livet.Design(Shared)\Livet.Design(Shared).shproj", "{AB7D1330-6AB6-46C3-AB5D-337D95494FEB}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Livet.Extentions(Shared)", "Universal(8.1)\Livet.Extentions(Shared)\Livet.Extentions(Shared).shproj", "{D024BDDE-19E3-4DFD-BC2A-261A02823C50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Livet(Win8.1)", "Universal(8.1)\Livet(Win8.1)\Livet(Win8.1).csproj", "{BD115685-B1C7-4332-B133-6693D449F87C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Livet(WP8.1)", "Universal(8.1)\Livet(WP8.1)\Livet(WP8.1).csproj", "{CE99E875-A76A-4D2A-816C-D00CCFDA0E98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Livet.Design(Win8.1)", "Universal(8.1)\Livet.Design(Win8.1)\Livet.Design(Win8.1).csproj", "{B231C5DA-56FE-465C-B057-55DD708F9887}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Livet.Design(WP8.1)", "Universal(8.1)\Livet.Design(WP8.1)\Livet.Design(WP8.1).csproj", "{5F9F6BDA-BBC7-4073-A370-3C11ECB11FB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Livet.Extentions(Win8.1)", "Universal(8.1)\Livet.Extentions(Win8.1)\Livet.Extentions(Win8.1).csproj", "{41333BC7-25DE-454E-A041-36C314A4122F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Livet.Extentions(WP8.1)", "Universal(8.1)\Livet.Extentions(WP8.1)\Livet.Extentions(WP8.1).csproj", "{81167D65-729E-4501-8355-1AFB101ACB29}"
+EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = Livet.vsmdi
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Universal(8.1)\Livet.Design(Shared)\Livet.Design(Shared).projitems*{b231c5da-56fe-465c-b057-55dd708f9887}*SharedItemsImports = 4
+		Universal(8.1)\Livet(Shared)\Livet(Shared).projitems*{ce99e875-a76a-4d2a-816c-d00ccfda0e98}*SharedItemsImports = 4
+		Universal(8.1)\Livet.Design(Shared)\Livet.Design(Shared).projitems*{5f9f6bda-bbc7-4073-a370-3c11ecb11fb2}*SharedItemsImports = 4
+		Universal(8.1)\Livet.Extentions(Shared)\Livet.Extentions(Shared).projitems*{81167d65-729e-4501-8355-1afb101acb29}*SharedItemsImports = 4
+		Universal(8.1)\Livet.Extentions(Shared)\Livet.Extentions(Shared).projitems*{d024bdde-19e3-4dfd-bc2a-261a02823c50}*SharedItemsImports = 13
+		Universal(8.1)\Livet.Design(Shared)\Livet.Design(Shared).projitems*{ab7d1330-6ab6-46c3-ab5d-337d95494feb}*SharedItemsImports = 13
+		Universal(8.1)\Livet(Shared)\Livet(Shared).projitems*{9d0485df-e463-4eda-a643-49f8eb84aab9}*SharedItemsImports = 13
+		Universal(8.1)\Livet.Extentions(Shared)\Livet.Extentions(Shared).projitems*{41333bc7-25de-454e-a041-36c314a4122f}*SharedItemsImports = 4
+		Universal(8.1)\Livet(Shared)\Livet(Shared).projitems*{bd115685-b1c7-4332-b133-6693d449f87c}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -235,22 +265,94 @@ Global
 		{75A6EAEE-E95B-457B-A3D0-E8356BC167D1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{75A6EAEE-E95B-457B-A3D0-E8356BC167D1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{75A6EAEE-E95B-457B-A3D0-E8356BC167D1}.Release|x86.ActiveCfg = Release|Any CPU
+		{BD115685-B1C7-4332-B133-6693D449F87C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD115685-B1C7-4332-B133-6693D449F87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD115685-B1C7-4332-B133-6693D449F87C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BD115685-B1C7-4332-B133-6693D449F87C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BD115685-B1C7-4332-B133-6693D449F87C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BD115685-B1C7-4332-B133-6693D449F87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD115685-B1C7-4332-B133-6693D449F87C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD115685-B1C7-4332-B133-6693D449F87C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BD115685-B1C7-4332-B133-6693D449F87C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BD115685-B1C7-4332-B133-6693D449F87C}.Release|x86.ActiveCfg = Release|Any CPU
+		{CE99E875-A76A-4D2A-816C-D00CCFDA0E98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE99E875-A76A-4D2A-816C-D00CCFDA0E98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE99E875-A76A-4D2A-816C-D00CCFDA0E98}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CE99E875-A76A-4D2A-816C-D00CCFDA0E98}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CE99E875-A76A-4D2A-816C-D00CCFDA0E98}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CE99E875-A76A-4D2A-816C-D00CCFDA0E98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE99E875-A76A-4D2A-816C-D00CCFDA0E98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE99E875-A76A-4D2A-816C-D00CCFDA0E98}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CE99E875-A76A-4D2A-816C-D00CCFDA0E98}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{CE99E875-A76A-4D2A-816C-D00CCFDA0E98}.Release|x86.ActiveCfg = Release|Any CPU
+		{B231C5DA-56FE-465C-B057-55DD708F9887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B231C5DA-56FE-465C-B057-55DD708F9887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B231C5DA-56FE-465C-B057-55DD708F9887}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B231C5DA-56FE-465C-B057-55DD708F9887}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B231C5DA-56FE-465C-B057-55DD708F9887}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B231C5DA-56FE-465C-B057-55DD708F9887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B231C5DA-56FE-465C-B057-55DD708F9887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B231C5DA-56FE-465C-B057-55DD708F9887}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B231C5DA-56FE-465C-B057-55DD708F9887}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B231C5DA-56FE-465C-B057-55DD708F9887}.Release|x86.ActiveCfg = Release|Any CPU
+		{5F9F6BDA-BBC7-4073-A370-3C11ECB11FB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F9F6BDA-BBC7-4073-A370-3C11ECB11FB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F9F6BDA-BBC7-4073-A370-3C11ECB11FB2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5F9F6BDA-BBC7-4073-A370-3C11ECB11FB2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5F9F6BDA-BBC7-4073-A370-3C11ECB11FB2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5F9F6BDA-BBC7-4073-A370-3C11ECB11FB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F9F6BDA-BBC7-4073-A370-3C11ECB11FB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F9F6BDA-BBC7-4073-A370-3C11ECB11FB2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5F9F6BDA-BBC7-4073-A370-3C11ECB11FB2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5F9F6BDA-BBC7-4073-A370-3C11ECB11FB2}.Release|x86.ActiveCfg = Release|Any CPU
+		{41333BC7-25DE-454E-A041-36C314A4122F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41333BC7-25DE-454E-A041-36C314A4122F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41333BC7-25DE-454E-A041-36C314A4122F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{41333BC7-25DE-454E-A041-36C314A4122F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{41333BC7-25DE-454E-A041-36C314A4122F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{41333BC7-25DE-454E-A041-36C314A4122F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41333BC7-25DE-454E-A041-36C314A4122F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41333BC7-25DE-454E-A041-36C314A4122F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{41333BC7-25DE-454E-A041-36C314A4122F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{41333BC7-25DE-454E-A041-36C314A4122F}.Release|x86.ActiveCfg = Release|Any CPU
+		{81167D65-729E-4501-8355-1AFB101ACB29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81167D65-729E-4501-8355-1AFB101ACB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81167D65-729E-4501-8355-1AFB101ACB29}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{81167D65-729E-4501-8355-1AFB101ACB29}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{81167D65-729E-4501-8355-1AFB101ACB29}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{81167D65-729E-4501-8355-1AFB101ACB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81167D65-729E-4501-8355-1AFB101ACB29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81167D65-729E-4501-8355-1AFB101ACB29}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{81167D65-729E-4501-8355-1AFB101ACB29}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{81167D65-729E-4501-8355-1AFB101ACB29}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{3BE8EBEA-C55D-45BF-B813-D7BD7E6E2811} = {2A9295C6-FB3D-41DF-967B-60BCE5934B51}
-		{58A6675C-2E47-48C5-B26C-8F27A0AED861} = {2A9295C6-FB3D-41DF-967B-60BCE5934B51}
+		{0EF98261-40BF-45A5-B990-8DAC1DE43D67} = {09A7E818-4915-4F22-A006-6BBD3CF89B68}
 		{D3C58359-8430-4A51-A77E-4E78E1E0A7D2} = {09A7E818-4915-4F22-A006-6BBD3CF89B68}
 		{7F52E397-3959-4D6C-B04C-10A2951F21A3} = {09A7E818-4915-4F22-A006-6BBD3CF89B68}
 		{FC88031F-A2B9-4283-975A-1DD341CE433C} = {09A7E818-4915-4F22-A006-6BBD3CF89B68}
-		{0EF98261-40BF-45A5-B990-8DAC1DE43D67} = {09A7E818-4915-4F22-A006-6BBD3CF89B68}
-		{8FB79215-A524-4D4E-8944-A984CB65610D} = {09A7E818-4915-4F22-A006-6BBD3CF89B68}
 		{93990E82-B8E1-41E8-B6F5-9A6C87674221} = {30061A06-663C-444C-9AB4-4F43C2BC6B88}
 		{2213440F-B566-4730-9040-B0CC58681B8B} = {30061A06-663C-444C-9AB4-4F43C2BC6B88}
 		{1C93D4CF-99A0-4441-AC76-434E34E85A3E} = {30061A06-663C-444C-9AB4-4F43C2BC6B88}
 		{438BE11E-78B2-4B1C-9304-54A4C49D820D} = {30061A06-663C-444C-9AB4-4F43C2BC6B88}
+		{3BE8EBEA-C55D-45BF-B813-D7BD7E6E2811} = {2A9295C6-FB3D-41DF-967B-60BCE5934B51}
+		{58A6675C-2E47-48C5-B26C-8F27A0AED861} = {2A9295C6-FB3D-41DF-967B-60BCE5934B51}
+		{8FB79215-A524-4D4E-8944-A984CB65610D} = {09A7E818-4915-4F22-A006-6BBD3CF89B68}
 		{75A6EAEE-E95B-457B-A3D0-E8356BC167D1} = {30061A06-663C-444C-9AB4-4F43C2BC6B88}
+		{9D0485DF-E463-4EDA-A643-49F8EB84AAB9} = {F1772DA5-6A26-4052-9084-B1AC25C30FA1}
+		{AB7D1330-6AB6-46C3-AB5D-337D95494FEB} = {F1772DA5-6A26-4052-9084-B1AC25C30FA1}
+		{D024BDDE-19E3-4DFD-BC2A-261A02823C50} = {F1772DA5-6A26-4052-9084-B1AC25C30FA1}
+		{BD115685-B1C7-4332-B133-6693D449F87C} = {F1772DA5-6A26-4052-9084-B1AC25C30FA1}
+		{CE99E875-A76A-4D2A-816C-D00CCFDA0E98} = {F1772DA5-6A26-4052-9084-B1AC25C30FA1}
+		{B231C5DA-56FE-465C-B057-55DD708F9887} = {F1772DA5-6A26-4052-9084-B1AC25C30FA1}
+		{5F9F6BDA-BBC7-4073-A370-3C11ECB11FB2} = {F1772DA5-6A26-4052-9084-B1AC25C30FA1}
+		{41333BC7-25DE-454E-A041-36C314A4122F} = {F1772DA5-6A26-4052-9084-B1AC25C30FA1}
+		{81167D65-729E-4501-8355-1AFB101ACB29} = {F1772DA5-6A26-4052-9084-B1AC25C30FA1}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Livet.vsmdi
 	EndGlobalSection
 EndGlobal
