@@ -5,8 +5,9 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Threading;
-using System.Windows.Threading;
+using Windows.UI.Core;
 
 namespace Livet
 {
@@ -14,8 +15,9 @@ namespace Livet
     /// コレクション変更通知を指定されたDisptcher経由で行うコレクションです。
     /// </summary>
     /// <typeparam name="T">コレクションアイテムの型</typeparam>
+    [DataContract]
     public class DispatcherCollection<T> : IList<T>,ICollection,INotifyCollectionChanged,INotifyPropertyChanged
-#if NET45
+#if NET45 || NETFX_CORE
         ,IReadOnlyList<T>
 #endif
     {
@@ -26,14 +28,14 @@ namespace Livet
         /// コンストラクタ
         /// </summary>
         /// <param name="dispatcher">UIDispatcher(通常はDispatcherHelper.UIDispatcher)</param>
-        public DispatcherCollection(Dispatcher dispatcher) : this(new ObservableCollection<T>(), dispatcher) { }
+        public DispatcherCollection(CoreDispatcher dispatcher) : this(new ObservableCollection<T>(), dispatcher) { }
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
         /// <param name="collection">元となるコレクション(IList(Of(T)とINotifyPropertyChangedも実装している必要があります)</param>
         /// <param name="dispatcher">UIDispatcher(通常はDispatcherHelper.UIDispatcher)</param>
-        public DispatcherCollection(INotifyCollectionChanged collection, Dispatcher dispatcher)
+        public DispatcherCollection(INotifyCollectionChanged collection, CoreDispatcher dispatcher)
         {
             if (collection == null)
             {
@@ -53,13 +55,13 @@ namespace Livet
             _souceAsIList = (IList<T>)collection;
 
             Dispatcher = dispatcher;
-            CollectionChangedDispatcherPriority = DispatcherPriority.Normal;
+            CollectionChangedDispatcherPriority = CoreDispatcherPriority.Normal;
 
-            ((INotifyPropertyChanged)collection).PropertyChanged += (sender, e) =>
+            ((INotifyPropertyChanged)collection).PropertyChanged += async (sender, e) =>
             {
-                if (!Dispatcher.CheckAccess())
+                if (!Dispatcher.HasThreadAccess)
                 {
-                    Dispatcher.Invoke(CollectionChangedDispatcherPriority, (Action)(() => OnPropertyChanged(e.PropertyName)));
+                    await Dispatcher.RunAsync(CollectionChangedDispatcherPriority, () => OnPropertyChanged(e.PropertyName));
                 }
                 else
                 {
@@ -67,11 +69,11 @@ namespace Livet
                 }
             };
 
-            collection.CollectionChanged += (sender, e) =>
+            collection.CollectionChanged += async (sender, e) =>
             {
-                if (!Dispatcher.CheckAccess())
+                if (!Dispatcher.HasThreadAccess)
                 {
-                    Dispatcher.Invoke(CollectionChangedDispatcherPriority, (Action)(() => OnCollectionChanged(e)));
+                    await Dispatcher.RunAsync(CollectionChangedDispatcherPriority, () => OnCollectionChanged(e));
                 }
                 else
                 {
@@ -83,7 +85,8 @@ namespace Livet
         /// <summary>
         /// このコレクションに関連付けられたDispatcherを取得、または設定します。
         /// </summary>
-        public Dispatcher Dispatcher
+        [DataMember]
+        public CoreDispatcher Dispatcher
         {
             get;
             set;
@@ -92,7 +95,8 @@ namespace Livet
         /// <summary>
         /// コレクション変更通知時のDispatcherPriorityを指定、または取得します。
         /// </summary>
-        public DispatcherPriority CollectionChangedDispatcherPriority
+        [DataMember]
+        public CoreDispatcherPriority CollectionChangedDispatcherPriority
         {
             get;
             set;
@@ -127,6 +131,7 @@ namespace Livet
             _souceAsIList.RemoveAt(index);
         }
 
+        [DataMember]
         public T this[int index]
         {
             get
@@ -296,13 +301,11 @@ namespace Livet
         /// <summary>
         /// プロパティが変更された際に発生するイベントです。
         /// </summary>
-        [field: NonSerialized]
         public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         /// <summary>
         /// コレクションが変更された際に発生するイベントです。
         /// </summary>
-        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }
