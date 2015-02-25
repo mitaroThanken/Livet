@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Windows.Threading;
 using System.ComponentModel;
 using System.Windows;
+using Windows.UI.Core;
+using Windows.UI.Xaml;
 
 namespace Livet
 {
@@ -10,18 +11,18 @@ namespace Livet
     /// </summary>
     public static class DispatcherHelper
     {
-        private static Dispatcher _uiDispatcher;
+        private static CoreDispatcher _uiDispatcher;
 
-        /// <summary>s
+        /// <summary>
         /// UIDispatcherを指定、または取得します。通常このプロパティはApp_StartUpで指定されます。
         /// </summary>
-        public static Dispatcher UIDispatcher
+        public static CoreDispatcher UIDispatcher
         {
             get
             {
-                if ((bool)(DesignerProperties.IsInDesignModeProperty.GetMetadata(typeof(DependencyObject)).DefaultValue))
+                if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
                 {
-                    _uiDispatcher = Dispatcher.CurrentDispatcher;
+                    _uiDispatcher = Window.Current.Dispatcher;
                 }
                 return _uiDispatcher;
             }
@@ -36,17 +37,17 @@ namespace Livet
         /// </summary>
         /// <param name="action">アクション</param>
         /// <exception cref="InvalidOperationException">UIDispatcherインスタンスがApp.StartUpなどで確保されていません。</exception>
-#if NET45
+#if NET45 || NETFX_CORE
         [Obsolete]
 #endif
-        public static void BeginInvoke(Action action)
+        public static async void BeginInvoke(Action action)
         {
             if (UIDispatcher == null)
             {
                 throw new InvalidOperationException("UIDispatcherインスタンスが確保されていません。App.StartUpで確保してください。");
             }
 
-            UIDispatcher.BeginInvoke(action, null);
+            await UIDispatcher.RunAsync(CoreDispatcherPriority.Normal, () => action());
         }
 
         /// <summary>
@@ -55,17 +56,17 @@ namespace Livet
         /// <param name="action">アクション</param>
         /// <param name="priority">DispatcherPriority</param>
         /// <exception cref="InvalidOperationException">UIDispatcherインスタンスがApp.StartUpなどで確保されていません。</exception>
-#if NET45
+#if NET45 || NETFX_CORE
         [Obsolete]
 #endif
-        public static void BeginInvoke(Action action, DispatcherPriority priority)
+        public static async void BeginInvoke(Action action, CoreDispatcherPriority priority)
         {
             if (UIDispatcher == null)
             {
                 throw new InvalidOperationException("UIDispatcherインスタンスが確保されていません。App.StartUpで確保してください。");
             }
 
-            UIDispatcher.BeginInvoke(action, priority, null);
+            await UIDispatcher.RunAsync(priority, () => action());
         }
     }
 }
