@@ -9,6 +9,7 @@
     <Import_RootNamespace>Livet(Shared)</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)EventArgsFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NotificationObject.cs" />
   </ItemGroup>
 </Project>
