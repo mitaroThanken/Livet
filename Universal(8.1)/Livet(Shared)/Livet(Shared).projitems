@@ -10,6 +10,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AnonymousDisposable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DispatcherCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DispatcherHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgsFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NotificationObject.cs" />
   </ItemGroup>
