@@ -18,6 +18,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)EventListeners\CollectionChangedEventListener.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventListeners\EventListener.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventListeners\PropertyChangedEventListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\WeakEvents\CollectionChangedWeakEventListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\WeakEvents\LivetWeakEventListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\WeakEvents\PropertyChangedWeakEventListener.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NotificationObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ObservableSynchronizedCollection.cs" />
   </ItemGroup>
