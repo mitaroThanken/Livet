@@ -36,5 +36,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)NotificationObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ObservableSynchronizedCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ReadOnlyDispatcherCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModelHelper.cs" />
   </ItemGroup>
 </Project>
