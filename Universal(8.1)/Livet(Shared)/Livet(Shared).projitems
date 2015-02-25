@@ -31,11 +31,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\IO\SavingFileSelectionMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\ResponsiveInteractionMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\TransitionMode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messaging\Windows\WindowAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messaging\Windows\WindowActionMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NotificationObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ObservableSynchronizedCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ReadOnlyDispatcherCollection.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Messaging\Windows\" />
   </ItemGroup>
 </Project>
