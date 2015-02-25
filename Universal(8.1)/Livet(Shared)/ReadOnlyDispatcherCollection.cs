@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Collections.Specialized;
-using System.Windows.Threading;
 using System.Threading;
+using System.Reflection;
 
 using Livet.EventListeners;
+using Windows.UI.Core;
 
 namespace Livet
 {
@@ -35,7 +36,7 @@ namespace Livet
         /// <summary>
         /// このコレクションが変更通知を行うDispatcherを取得します。
         /// </summary>
-        public Dispatcher Dispatcher
+        public CoreDispatcher Dispatcher
         {
             get
             {
@@ -117,7 +118,7 @@ namespace Livet
             {
                 _listeners.Dispose();
 
-                if (typeof(IDisposable).IsAssignableFrom(typeof(T)))
+                if (typeof(IDisposable).GetTypeInfo().IsAssignableFrom(typeof(T).GetTypeInfo()))
                 {
                     foreach (IDisposable i in _list)
                     {
