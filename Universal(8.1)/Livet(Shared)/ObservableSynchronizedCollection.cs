@@ -5,6 +5,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Threading;
 using System.Collections;
+using System.Runtime.Serialization;
 
 namespace Livet
 {
@@ -13,16 +14,16 @@ namespace Livet
     /// </summary>
     /// <typeparam name="T">コレクションアイテムの型</typeparam>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
-    [Serializable]
+    [DataContract]
     public class ObservableSynchronizedCollection<T> : IList<T>,ICollection,INotifyCollectionChanged, INotifyPropertyChanged
-#if NET45
+#if NET45 || NETFX_CORE
 , IReadOnlyList<T>
 #endif
     {
         private IList<T> _list;
-        [NonSerialized]
+        [IgnoreDataMember]
         private object _syncRoot = new object();
-        [NonSerialized]
+        [IgnoreDataMember]
         private ReaderWriterLockSlim _lock = new ReaderWriterLockSlim();
 
         /// <summary>
@@ -85,6 +86,7 @@ namespace Livet
                 });
         }
 
+        [DataMember]
         public T this[int index]
         {
             get
@@ -412,13 +414,11 @@ namespace Livet
         /// <summary>
         /// コレクションが変更された際に発生するイベントです。
         /// </summary>
-        [field: NonSerialized]
         public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         /// <summary>
         /// プロパティが変更された際に発生するイベントです。
         /// </summary>
-        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }
