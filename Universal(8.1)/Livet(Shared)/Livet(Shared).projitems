@@ -13,6 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)DispatcherCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DispatcherHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgsFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\EventListener.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NotificationObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ObservableSynchronizedCollection.cs" />
   </ItemGroup>
