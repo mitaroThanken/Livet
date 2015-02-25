@@ -42,6 +42,12 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Livet%28Win8.1%29\Livet%28Win8.1%29.csproj">
+      <Project>{bd115685-b1c7-4332-b133-6693d449f87c}</Project>
+      <Name>Livet%28Win8.1%29</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="..\Livet.Design(Shared)\Livet.Design(Shared).projitems" Label="Shared" Condition="Exists('..\Livet.Design(Shared)\Livet.Design(Shared).projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
