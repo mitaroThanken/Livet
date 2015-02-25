@@ -30,6 +30,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\IO\OpeningFileSelectionMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\IO\SavingFileSelectionMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\ResponsiveInteractionMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messaging\TransitionMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\TransitionMode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\Windows\WindowAction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\Windows\WindowActionMessage.cs" />
