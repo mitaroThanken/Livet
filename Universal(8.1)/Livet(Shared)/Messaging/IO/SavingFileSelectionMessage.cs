@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Windows.UI.Xaml;
 namespace Livet.Messaging.IO
 {
     /// <summary>
@@ -19,6 +20,8 @@ namespace Livet.Messaging.IO
         {
         }
 
+        // TODO 親が Freezable クラスからの派生ではなくなったため、削除。……大丈夫？
+        /*
         /// <summary>
         /// 派生クラスでは必ずオーバーライドしてください。Freezableオブジェクトとして必要な実装です。<br/>
         /// 通常このメソッドは、自身の新しいインスタンスを返すように実装します。
@@ -28,6 +31,7 @@ namespace Livet.Messaging.IO
         {
             return new SavingFileSelectionMessage(MessageKey);
         }
+         */
 
         /// <summary>
         /// ユーザーが存在しないファイルを指定した場合に、ファイルを作成することを確認するメッセージを表示するかどうかを指定、または取得します。デフォルトはfalseです。

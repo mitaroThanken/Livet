@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Windows.UI.Xaml;
 
 namespace Livet.Messaging.IO
 {
@@ -10,7 +11,7 @@ namespace Livet.Messaging.IO
         public OpeningFileSelectionMessage()
         {
         }
-
+ 
         /// <summary>
         /// メッセージキーを指定して新しい相互作用メッセージのインスタンスを生成します。
         /// </summary>
@@ -20,6 +21,8 @@ namespace Livet.Messaging.IO
         {
         }
 
+        // TODO 親が Freezable クラスからの派生ではなくなったため、削除。……大丈夫？
+        /* 
         /// <summary>
         /// 派生クラスでは必ずオーバーライドしてください。Freezableオブジェクトとして必要な実装です。<br/>
         /// 通常このメソッドは、自身の新しいインスタンスを返すように実装します。
@@ -29,6 +32,7 @@ namespace Livet.Messaging.IO
         {
             return new OpeningFileSelectionMessage(MessageKey);
         }
+         */
 
         /// <summary>
         /// 複数ファイルを選択可能かを取得、または設定します。

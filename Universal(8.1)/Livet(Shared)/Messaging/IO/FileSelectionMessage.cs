@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Windows.UI.Xaml;
 
 namespace Livet.Messaging.IO
 {
@@ -18,12 +19,15 @@ namespace Livet.Messaging.IO
         {
         }
 
+        // TODO 親が Freezable クラスからの派生ではなくなったため、削除。……大丈夫？
+        /*
         /// <summary>
         /// 派生クラスでは必ずオーバーライドしてください。Freezableオブジェクトとして必要な実装です。<br/>
         /// 通常このメソッドは、自身の新しいインスタンスを返すように実装します。
         /// </summary>
         /// <returns>自身の新しいインスタンス</returns>
         protected abstract override Freezable CreateInstanceCore();
+         */
 
 
         /// <summary>
