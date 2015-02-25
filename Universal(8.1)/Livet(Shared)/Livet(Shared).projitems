@@ -26,10 +26,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\GenericResponsiveInteractionMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\InteractionMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\InteractionMessenger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messaging\IO\FileSelectionMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messaging\IO\OpeningFileSelectionMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messaging\IO\SavingFileSelectionMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\ResponsiveInteractionMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\TransitionMode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NotificationObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ObservableSynchronizedCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ReadOnlyDispatcherCollection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Messaging\Windows\" />
   </ItemGroup>
 </Project>
