@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Windows.UI.Xaml;
 
 namespace Livet.Messaging.Windows
 {
@@ -36,6 +37,8 @@ namespace Livet.Messaging.Windows
         public WindowActionMessage(WindowAction action)
             : this(action,null) { }
 
+        // TODO 親が Freezable クラスからの派生ではなくなったため、削除。……大丈夫？
+        /*
         /// <summary>
         /// 派生クラスでは必ずオーバーライドしてください。Freezableオブジェクトとして必要な実装です。<br/>
         /// 通常このメソッドは、自身の新しいインスタンスを返すように実装します。
@@ -45,6 +48,7 @@ namespace Livet.Messaging.Windows
         {
             return new WindowActionMessage(MessageKey);
         }
+         */
 
         /// <summary>
         /// Windowが遷移すべき状態を表すWindowAction列挙体を指定、または取得します。
@@ -56,9 +60,18 @@ namespace Livet.Messaging.Windows
         }
 
         // Using a DependencyProperty as the backing store for Action.  This enables animation, styling, binding, etc...
+        // TODO 依存関係プロパティーの初期値はこれで問題ないか？
         public static readonly DependencyProperty ActionProperty =
-            DependencyProperty.Register("Action", typeof(WindowAction), typeof(WindowActionMessage), new PropertyMetadata());
+            DependencyProperty.Register("Action", typeof(WindowAction), typeof(WindowActionMessage), new PropertyMetadata(WindowAction.Normal, OnActionChanged));
 
-        
+        /// <summary>
+        /// 依存関係プロパティーの定義のため、追加。プロパティーが変化したとしても、何もしない。
+        /// </summary>
+        /// <param name="d"></param>
+        /// <param name="e"></param>
+        private static void OnActionChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            // throw new System.NotImplementedException();
+        }
     }
 }
