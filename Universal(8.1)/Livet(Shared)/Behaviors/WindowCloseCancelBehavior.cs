@@ -1,6 +1,6 @@
-﻿using System.Windows.Interactivity;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Input;
+using Windows.UI.Xaml;
 
 namespace Livet.Behaviors
 {
@@ -65,7 +65,6 @@ namespace Livet.Behaviors
 
         protected override void OnAttached()
         {
-            base.OnAttached();
             AssociatedObject.Closing += (sender, e) =>
                 {
                     if (!CanClose)
