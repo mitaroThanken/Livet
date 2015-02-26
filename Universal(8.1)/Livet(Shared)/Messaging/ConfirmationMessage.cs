@@ -1,7 +1,9 @@
-﻿using System.Windows;
+﻿using Windows.UI.Xaml;
 
 namespace Livet.Messaging
 {
+    // FIXME 単純移植不可。要検討。
+    /*
     /// <summary>
     /// 確認相互作用メッセージを表します。
     /// </summary>
@@ -146,4 +148,5 @@ namespace Livet.Messaging
         public static readonly DependencyProperty DefaultResultProperty =
             DependencyProperty.Register("DefaultResult", typeof(MessageBoxResult), typeof(ConfirmationMessage), new PropertyMetadata(MessageBoxResult.OK));
     }
+     */
 }
