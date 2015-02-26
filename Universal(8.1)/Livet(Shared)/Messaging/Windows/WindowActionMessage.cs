@@ -62,16 +62,6 @@ namespace Livet.Messaging.Windows
         // Using a DependencyProperty as the backing store for Action.  This enables animation, styling, binding, etc...
         // TODO 依存関係プロパティーの初期値はこれで問題ないか？
         public static readonly DependencyProperty ActionProperty =
-            DependencyProperty.Register("Action", typeof(WindowAction), typeof(WindowActionMessage), new PropertyMetadata(WindowAction.Normal, OnActionChanged));
-
-        /// <summary>
-        /// 依存関係プロパティーの定義のため、追加。プロパティーが変化したとしても、何もしない。
-        /// </summary>
-        /// <param name="d"></param>
-        /// <param name="e"></param>
-        private static void OnActionChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            // throw new System.NotImplementedException();
-        }
+            DependencyProperty.Register("Action", typeof(WindowAction), typeof(WindowActionMessage), new PropertyMetadata(WindowAction.Normal));
     }
 }
