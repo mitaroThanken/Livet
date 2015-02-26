@@ -10,6 +10,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AnonymousDisposable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\Command.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\ListenerCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\ViewModelCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DispatcherCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DispatcherHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgsFactory.cs" />
