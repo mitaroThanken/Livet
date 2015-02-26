@@ -64,7 +64,7 @@ namespace Livet.Behaviors
                 return;
             }
 
-            _methodInfo = _targetObjectType.GetMethods()
+            _methodInfo = _targetObjectType.GetRuntimeMethods()
                 .FirstOrDefault(method =>
                 {
                     if (method.Name != methodName) return false;
@@ -73,7 +73,7 @@ namespace Livet.Behaviors
 
                     if (parameters.Length != 1) return false;
 
-                    if (!_argumentType.IsAssignableFrom(parameters[0].ParameterType)) return false;
+                    if (!_argumentType.GetTypeInfo().IsAssignableFrom(parameters[0].ParameterType.GetTypeInfo())) return false;
 
                     //if (!parameters[0].ParameterType.IsInstanceOfType(_argumentType)) return false;
 
