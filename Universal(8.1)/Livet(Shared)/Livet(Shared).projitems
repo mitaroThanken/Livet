@@ -22,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)EventListeners\WeakEvents\LivetWeakEventListener.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventListeners\WeakEvents\PropertyChangedWeakEventListener.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LivetCompositeDisposable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messaging\ConfirmationMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\GenericInteractionMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\GenericResponsiveInteractionMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messaging\InformationMessage.cs" />
