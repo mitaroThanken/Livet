@@ -20,15 +20,15 @@ namespace Livet.Behaviors
         /// The associated object property.
         /// </summary>
         public static readonly DependencyProperty AssociatedObjectProperty =
-            DependencyProperty.Register("AssociatedObject", typeof (FrameworkElement), typeof (TriggerAction<T>),
+            DependencyProperty.Register("AssociatedObject", typeof (T), typeof (TriggerAction<T>),
                 new PropertyMetadata(null, OnAssociatedObjectChanged));
 
         /// <summary>
         /// Gets or sets the object to which this <see cref="TriggerAction&lt;T&gt;"/> is attached. 
         /// </summary>
-        public FrameworkElement AssociatedObject {
+        public T AssociatedObject {
             get {
-                return (FrameworkElement) GetValue(AssociatedObjectProperty);
+                return (T) GetValue(AssociatedObjectProperty);
             }
             set {
                 SetValue(AssociatedObjectProperty, value);
