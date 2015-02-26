@@ -1,5 +1,5 @@
-﻿using System.Windows.Interactivity;
-using System.Windows;
+﻿using System.Windows;
+using Windows.UI.Xaml;
 
 namespace Livet.Behaviors
 {
