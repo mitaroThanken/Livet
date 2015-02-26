@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AnonymousDisposable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Behavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\DataContextDisposeAction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\LivetCallMethodAction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\LivetDataTrigger.cs" />
@@ -17,6 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\MethodBinderWithArgument.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\RoutedEventTrigger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\SetFocusAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\TriggerAction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\WindowCloseCancelBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\Command.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\ListenerCommand.cs" />
