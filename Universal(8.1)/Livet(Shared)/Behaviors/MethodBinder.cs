@@ -59,7 +59,7 @@ namespace Livet.Behaviors
                 return;
             }
 
-            _methodInfo = _targetObjectType.GetMethods()
+            _methodInfo = _targetObjectType.GetRuntimeMethods()
                 .FirstOrDefault(method =>
                 {
                     if (method.Name != methodName) return false;
